@@ -38,7 +38,7 @@ cd ./code
 ## Dataset Pre-processing
 
 ### Data Storage and Demo Dataset
-Single-cell spatial proteomics data should be placed within the ./data/ directory. For demonstration purposes, we have included the CODEX dataset, which is located in the ./data/CODEX/ folder.
+Single-cell spatial proteomics data should be placed within the ./data/ directory. For demonstration purposes, we provide a demo version of the CODEX dataset in the ./data/CODEX/ folder due the space limit. Full dataset can be downloaded from the [MAPS Zenodo repository](https://zenodo.org/records/10067010).
 
 ### Running the Dataset Splitting Script
 Once the data is in place, the dataset splitting script needs to be executed. This script prepares the data by dividing it into training and testing sets for cross-validation.
@@ -67,7 +67,7 @@ python main.py
 ```
 
 ### Time cost
-Expected run time for demo on a "normal" desktop computer is about 300 minutes. This duration may vary depending on the hardware specifications and the size of the dataset.
+Expected run time for demo on a "normal" desktop computer is about 100 minutes. This duration may vary depending on the hardware specifications and the size of the dataset.
 
 ### Expected Output
 Upon successful execution, the script will create a new directory under `./Result`. The directory will be named `CODEX_{timestamp}`, where `{timestamp}` represents the date and time of the run.
@@ -80,10 +80,10 @@ This directory will contain the following subfolders and files:
 For custom datasets, the following guidelines apply:
 
 ### Data Formatting:
-- Data must be pre-processed into a CSV file.
+- Data should be pre-processed into a CSV file.
 - Each row in the CSV is to represent a single cell.
 
-The columns must include:
+The columns should include:
 
 - Marker Columns: n columns, where each column represents a specific protein marker, and the corresponding cell value indicates the expression level for that marker.
 
@@ -101,5 +101,5 @@ The .npy file must contain a Python dictionary. In this dictionary:
 - The values should be the corresponding numerical embedding arrays (e.g., NumPy arrays) extracted by ESM3 for each protein marker.
 
 ## Data Availability
-Due to the space limitation, we used the proposed CODEX dataset as a demo dataset. The raw CODEX, MIBI1, and MIBI2 datasets, can be downloaded from the [MAPS Zenodo repository](https://zenodo.org/records/10067010). The hIntestine dataset can be downloaded from the [DRYAD repository](https://datadryad.org/landing/show?id=doi%3A10.5061%2Fdryad.g4f4qrfrc). 
+Due to the space limitation, the CODEX dataset provided in the ./data/CODEX/ folder of this repository is a demo version. The full raw CODEX, MIBI1, and MIBI2 datasets, can be downloaded from the [MAPS Zenodo repository](https://zenodo.org/records/10067010). The hIntestine dataset can be downloaded from the [DRYAD repository](https://datadryad.org/landing/show?id=doi%3A10.5061%2Fdryad.g4f4qrfrc). 
 
